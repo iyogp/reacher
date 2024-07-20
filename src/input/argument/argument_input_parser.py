@@ -15,8 +15,7 @@ class ArgumentInputParser:
         """
         # add argument for UTR user id
         self.parser.add_argument(
-            "-u"
-            "--uid",
+            "-u",
             dest="user_id",
             action="store",
             help="The id for the UTR user account",
