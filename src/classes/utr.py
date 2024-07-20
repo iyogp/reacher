@@ -1,11 +1,12 @@
 import posixpath
+from typing import Any
 
 from requests import Session, HTTPError
 
 from src.exceptions.exceptions import CannotExtractUtrData
 
 
-class Utr(object):
+class Utr:
     """A class to execute HTTP requests with a UTR server."""
 
     player = "player"
@@ -24,7 +25,7 @@ class Utr(object):
         session.auth = (username, password)
         self.session = session
 
-    def _get_wrapper(self, get_request_url: str, params: dict) -> dict:
+    def _get_wrapper(self, get_request_url: str, params: dict) -> Any:
         """
         Executes the GET request for the UTR server.
         :param get_request_url: the url to GET from the UTR server.
@@ -36,7 +37,7 @@ class Utr(object):
         response.raise_for_status()
         return response.json()
 
-    def get_profile(self, user_id: int):
+    def get_profile(self, user_id: int) -> Any:
         """
         Gets profile data for a given user id.
         :param user_id: the user id to get profile data for
@@ -47,7 +48,7 @@ class Utr(object):
         except HTTPError:
             raise CannotExtractUtrData(f"Unable to extract UTR profile data for user id: {user_id}")
 
-    def get_results(self, user_id: int, year="last", match_type="singles"):
+    def get_results(self, user_id: int, year="last", match_type="singles") -> Any:
         """
         Gets results data for a given user id.
         :param user_id:  the user id to get results data for
