@@ -13,7 +13,7 @@ class EnvironmentInputParser:
         self.username = None
         self.password = None
 
-    def _parse_required(self, key: str):
+    def parse_required(self, key: str):
         value = os.getenv(key)
         if value is None:
             raise EnvironmentInputNotParsedError(f"Environment variable \"{key}\" has not been set or parsed")
@@ -22,9 +22,9 @@ class EnvironmentInputParser:
 
     def parse_environment(self):
         """Parses the environment variables"""
-        self.url = self._parse_required(UTR_URL)
-        self.username = self._parse_required(UTR_USERNAME)
-        self.password = self._parse_required(UTR_PASSWORD)
+        self.url = self.parse_required(UTR_URL)
+        self.username = self.parse_required(UTR_USERNAME)
+        self.password = self.parse_required(UTR_PASSWORD)
 
     def get_utr_url(self):
         """
