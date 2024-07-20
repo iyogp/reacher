@@ -15,7 +15,7 @@ class UtrGenerator:
             username=input_parser.get_utr_username(),
             password=input_parser.get_utr_password()
         )
-        self.user_id = input_parser.get_utr_user_id()
+        self.user_id = input_parser.get_user_id()
 
     def extract(self):
         extractor = UtrExtractor(self.utr)

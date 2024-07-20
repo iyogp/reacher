@@ -14,12 +14,12 @@ class InputParser:
         self.argument_parser.parse_arguments()
         self.environment_parser.parse_environment()
 
-    def get_utr_user_id(self):
+    def get_user_id(self):
         """
         Get the UTR user ID from the command line arguments
         :return: the UTR user ID
         """
-        return self.argument_parser.get_utr_user_id()
+        return self.argument_parser.get_user_id()
 
     def get_utr_url(self):
         """
