@@ -1,33 +1,32 @@
 from argparse import ArgumentParser
 
-from src.exceptions.exceptions import ArgumentInputNotParsedError
 
-
-class ArgumentParser:
+class ArgumentInputParser:
     """Parses command line arguments"""
 
     def __init__(self):
-        self.parser = ArgumentParser()
         self.args = None
 
-    def _parse_utr_user_id(self, parser: ArgumentParser):
+    def add_arguments(self, parser: ArgumentParser):
         """
-        Parses the UTR user id
-        :param parser: ArgumentParser object to parse the UTR user id
+        Add arguments from command line
+        :param parser: ArgumentParser object to parse
         """
+        # add argument for UTR user id
         parser.add_argument(
             "-u"
             "--uid",
             dest="user_id",
             action="store",
             help="The id for the UTR user account",
-            required=True
+            required=True,
+            type=int
         )
 
     def parse_arguments(self):
         """Parses the arguments"""
-        parser = self.parser
-        self._parse_utr_user_id(parser)
+        parser = ArgumentParser()
+        self.add_arguments(parser)
         self.args = parser.parse_args()
 
     def get_utr_user_id(self):
@@ -35,7 +34,4 @@ class ArgumentParser:
         Gets the UTR user id from the arguments
         :return: the UTR user id
         """
-        if self.args is None:
-            raise ArgumentInputNotParsedError("Arguments not parsed")
-        else:
-            return self.args.user_id
+        return self.args.user_id

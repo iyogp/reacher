@@ -1,13 +1,13 @@
-from src.input.argument.argument_parser import ArgumentParser
-from src.input.environment.environment_parser import EnvironmentParser
+from src.input.argument.argument_input_parser import ArgumentInputParser
+from src.input.environment.environment_input_parser import EnvironmentInputParser
 
 
-class Input:
+class InputParser:
     """Parsers input arguments and environment variables"""
 
     def __init__(self):
-        self.argument_parser = ArgumentParser()
-        self.environment_parser = EnvironmentParser()
+        self.argument_parser = ArgumentInputParser()
+        self.environment_parser = EnvironmentInputParser()
 
     def parse_input(self):
         """Parsers the inputs from command line arguments and the environment"""
