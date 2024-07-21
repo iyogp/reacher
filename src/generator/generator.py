@@ -11,9 +11,9 @@ class UtrGenerator:
         input_parser = InputParser()
         input_parser.parse_input()
         self.utr = Utr(
-            url=input_parser.get_utr_url(),
-            username=input_parser.get_utr_username(),
-            password=input_parser.get_utr_password()
+            url=input_parser.get_url(),
+            username=input_parser.get_username(),
+            password=input_parser.get_password()
         )
         self.user_id = input_parser.get_user_id()
 

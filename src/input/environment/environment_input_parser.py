@@ -26,7 +26,7 @@ class EnvironmentInputParser:
         self.username = self.parse_required(UTR_USERNAME)
         self.password = self.parse_required(UTR_PASSWORD)
 
-    def get_utr_url(self):
+    def get_url(self):
         """
         Get the UTR url from the environment
         :return: the UTR url

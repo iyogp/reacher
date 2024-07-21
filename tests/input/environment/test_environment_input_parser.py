@@ -17,6 +17,6 @@ class TestEnvironmentInputParser:
     def test_parse_environment(self):
         parser = EnvironmentInputParser()
         parser.parse_environment()
-        assert parser.get_utr_url() == "www.someurl.com"
+        assert parser.get_url() == "www.someurl.com"
         assert parser.get_username() == "someUsername"
         assert parser.get_password() == "somePassword"
