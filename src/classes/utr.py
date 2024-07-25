@@ -25,7 +25,7 @@ class Utr:
         session.auth = (username, password)
         self.session = session
 
-    def _get_wrapper(self, get_request_url: str, params: dict) -> Any:
+    def __get_wrapper(self, get_request_url: str, params: dict) -> Any:
         """
         Executes the GET request for the UTR server.
         :param get_request_url: the url to GET from the UTR server.
@@ -44,7 +44,7 @@ class Utr:
         :return: the profile data for the given user id
         """
         try:
-            return self._get_wrapper(posixpath.join(self.url, self.api, self.version, self.player, str(user_id)), {})
+            return self.__get_wrapper(posixpath.join(self.url, self.api, self.version, self.player, str(user_id)), {})
         except HTTPError:
             raise CannotExtractUtrData(f"Unable to extract UTR profile data for user id: {user_id}")
 
@@ -61,7 +61,7 @@ class Utr:
                 "year": year,
                 "type": match_type
             }
-            return self._get_wrapper(
+            return self.__get_wrapper(
                 posixpath.join(self.url, self.api, self.version, self.player, str(user_id), "results"),
                 params=params
             )
