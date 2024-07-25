@@ -1,4 +1,4 @@
-from src.classes.utr import Utr
+from classes import Utr
 
 
 class UtrExtractor:

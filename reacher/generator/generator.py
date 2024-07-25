@@ -1,8 +1,6 @@
-from src.input.input_parser import InputParser
-
-from src.classes.utr import Utr
-
-from src.generator.extract.extractor import UtrExtractor
+from input import InputParser
+from classes import Utr
+from extract import UtrExtractor
 
 
 class UtrGenerator:

@@ -3,7 +3,7 @@ from typing import Any
 
 from requests import Session, HTTPError
 
-from src.exceptions.exceptions import CannotExtractUtrData
+from exceptions import CannotExtractUtrData
 
 
 class Utr:

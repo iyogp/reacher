@@ -1,5 +1,5 @@
-from src.input.argument.argument_input_parser import ArgumentInputParser
-from src.input.environment.environment_input_parser import EnvironmentInputParser
+from .argument import ArgumentInputParser
+from .environment import EnvironmentInputParser
 
 
 class InputParser:

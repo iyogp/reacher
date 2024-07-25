@@ -2,7 +2,7 @@ from datetime import date
 
 from dataclasses import dataclass
 
-from src.models.match import Match
+from models import Match
 
 
 @dataclass

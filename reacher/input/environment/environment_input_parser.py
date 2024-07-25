@@ -1,8 +1,7 @@
 import os
 
-from src.constants import UTR_URL, UTR_USERNAME, UTR_PASSWORD
-
-from src.exceptions.exceptions import EnvironmentInputNotParsedError
+from constants import UTR_URL, UTR_USERNAME, UTR_PASSWORD
+from exceptions import EnvironmentInputNotParsedError
 
 
 class EnvironmentInputParser:

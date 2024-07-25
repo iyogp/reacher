@@ -3,7 +3,7 @@ from argparse import Namespace
 
 from pytest import raises
 
-from src.input.argument.argument_input_parser import ArgumentInputParser
+from input import ArgumentInputParser
 
 
 class TestArgumentParser:

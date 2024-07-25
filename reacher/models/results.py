@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from src.models.event import Event
+from models import Event
 
 
 @dataclass

@@ -1,8 +1,7 @@
 import pytest
 
-from src.input.environment.environment_input_parser import EnvironmentInputParser
-
-from src.exceptions.exceptions import EnvironmentInputNotParsedError
+from input import EnvironmentInputParser
+from exceptions import EnvironmentInputNotParsedError
 
 
 class TestEnvironmentInputParser:
