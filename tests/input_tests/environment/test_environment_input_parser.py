@@ -1,5 +1,3 @@
-import os
-
 import pytest
 
 from reacher import UTR_URL, UTR_USERNAME, UTR_PASSWORD
@@ -26,7 +24,6 @@ class TestEnvironmentInputParser:
         monkeypatch.setenv(UTR_PASSWORD, self.TEST_UTR_PASSWORD)
 
     def test_parse_environment(self, mock_environment):
-        lol = os.environ
         parser = EnvironmentInputParser()
         parser.parse_environment()
         assert parser.get_url() == self.TEST_UTR_URL
